@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
+//Sin terminar de implementar
+
 namespace AppAdopción.Models
 {
     class Chat
