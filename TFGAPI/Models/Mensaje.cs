@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace TFGAPI.Models;
-
+//Sin terminar de implementar
 public partial class Mensaje
 {
     public int MensajeId { get; set; }
