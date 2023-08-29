@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppAdopción.Views.ModificarPublicacionPage"
+             Title="Modificar Publicación">
+    <ContentPage.Content>
+        <ScrollView Padding="20" BackgroundColor="#F5F5F5">
+            <StackLayout>
+                <Label Text="Modificar Publicación" TextColor="Black" FontAttributes="Bold" FontSize="24" HorizontalOptions="CenterAndExpand" Margin="0,0,0,20" />
+
+                <Label Text="Descripción" FontSize="18" TextColor="#808080"/>
+                <Frame BackgroundColor="White"  CornerRadius="10" Padding="5">
+                    <StackLayout>
+
+                        <Editor x:Name="descPubli" Placeholder="Descripción" AutoSize="TextChanges" MaxLength="220" Margin="0,0,0,10" />
+                    </StackLayout>
+
+                </Frame>
+
+                <Label Text="Ciudad"  FontSize="18" TextColor="#808080"/>
+                <Entry x:Name="ciudadAnim" Margin="0,0,0,10" />
+
+                <Label Text="Nombre del animal"  FontSize="18" TextColor="#808080"/>
+                <Entry x:Name="nombreAnim" Margin="0,0,0,10" />
+
+                <Label Text="Especie del animal"  FontSize="18" TextColor="#808080"/>
+                <Entry x:Name="especieAnim"  Margin="0,0,0,10" />
+
+                <Label Text="Edad del animal"  FontSize="18" TextColor="#808080"/>
+                <Entry x:Name="edadAnim" Keyboard="Numeric" Margin="0,0,0,10" />
+
+                <Picker x:Name="tamAnim" Title="Tamaño del Animal" Margin="0,0,0,10">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Pequeño</x:String>
+                            <x:String>Mediano</x:String>
+                            <x:String>Grande</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Label Text="Sexo del Animal" FontSize="18" TextColor="#808080" FontAttributes="Bold" Margin="0,0,0,5" />
+
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
+                    <RadioButton x:Name="maleRadioButton" Value="Macho" IsChecked="True" Content="Macho"/>
+                    <RadioButton x:Name="femaleRadioButton" Value="Hembra" Content="Hembra"/>
+                </StackLayout>
+
+                <Button Text="Seleccionar Foto del Animal" BackgroundColor="#FFA500" TextColor="White" Margin="0,0,0,10" Clicked="PickPhoto_Clicked"/>
+
+                <!-- Aquí puedes añadir una Image para mostrar la foto seleccionada -->
+                <Image x:Name="imagenAnimal" HeightRequest="200" Aspect="AspectFill"/>
+
+                <Button x:Name="publicarButton" Text="Publicar" BackgroundColor="#FFA500" TextColor="White" Clicked="publicarButton_Clicked"/>
+                <Label x:Name="errormsg" Text="Todos los campos son obligatorios" TextColor="Red" FontSize="12" Margin="0,-10,0,10" IsVisible="False"/>
+                <Button x:Name="cancelButton" Text="Cancelar" BackgroundColor="#808080" TextColor="White" Clicked="cancelButton_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

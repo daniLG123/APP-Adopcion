@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppAdopción.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--Header Color-->
+            <Color x:Key="main-header-color">#62B1F6</Color>
+            <Color x:Key="primary-title-color">#FFFFFF</Color>
+            <Style ApplyToDerivedTypes="true" TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource Key=main-header-color}"/>
+                <Setter Property="BarTextColor" Value="{StaticResource Key=primary-title-color}"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

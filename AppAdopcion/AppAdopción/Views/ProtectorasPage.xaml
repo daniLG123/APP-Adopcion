@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Protectoras"
+             xmlns:viewModels="clr-namespace:AppAdopción.ViewModels"
+             x:Class="AppAdopción.Views.ProtectorasPage">
+    <ContentPage.BindingContext>
+        <viewModels:ProtectorasViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid RowSpacing="0" ColumnSpacing="0"  RowDefinitions="*" BackgroundColor="#84D69B">
+            <CollectionView Grid.Row="0"  x:Name="collection" Margin="0,10,0,0" ItemsSource="{Binding Protectoras}" SelectionMode="None" VerticalOptions="Fill">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="1" VerticalItemSpacing="20"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.EmptyView>
+                    <StackLayout>
+                        <Label Text="No se encontraron protectoras" TextColor="Black" HorizontalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </CollectionView.EmptyView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame  Margin="10, 0" CornerRadius="20" Padding="10,15">
+                                <Frame.Background>
+                                    <LinearGradientBrush EndPoint="0,1">
+                                        <GradientStopCollection>
+                                            <GradientStop Color="#62B1F6" Offset="0"/>
+                                            <GradientStop Color="#808080" Offset="1"/>
+                                        </GradientStopCollection>
+                                    </LinearGradientBrush>
+                                </Frame.Background>
+                                <StackLayout Orientation="Horizontal" >
+                                    <Frame CornerRadius="10" Padding="10,15" BorderColor="#FFD700" BackgroundColor="Transparent">
+                                        <StackLayout  Padding="10" VerticalOptions="Center" HorizontalOptions="StartAndExpand">
+                                            <Label Text="{Binding Username}" VerticalOptions="Center" FontSize="17" TextColor="White" FontAttributes="Bold" />
+                                            <Label TextColor="Black">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="Tel: +34 "/>
+                                                        <Span Text="{Binding Telefono}"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                            <Label TextColor="Black">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="Encuentranos en: "/>
+                                                        <Span FontAttributes="Bold" Text="{Binding Ciudad}"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                        </StackLayout>
+                                    </Frame>
+
+
+                                    <StackLayout HorizontalOptions="EndAndExpand" Margin="0,0,0,0" VerticalOptions="Center">
+                                        <Button Text="Ver Publicaciones" FontSize="12"  BackgroundColor="#FFA500" TextColor="Black" CornerRadius="10" WidthRequest="120" HeightRequest="50" 
+                                                Command="{Binding Source={x:Reference collection}, Path=BindingContext.AccederCommand}" CommandParameter="{Binding .}"/>
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

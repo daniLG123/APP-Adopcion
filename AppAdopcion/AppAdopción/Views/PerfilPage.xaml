@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Perfil"
+             x:Class="AppAdopción.Views.PerfilPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20" BackgroundColor="#F5F5F5">
+            <Label Text="Nombre de Usuario"  FontSize="18" TextColor="#808080" />
+            <Entry x:Name="usernameEntry"  />
+
+            <Label Text="Email" FontSize="18" TextColor="#808080"/>
+            <Entry x:Name="emailEntry" Keyboard="Email"/>
+
+            <Label Text="Teléfono"  FontSize="18" TextColor="#808080"/>
+            <Entry x:Name="movilEntry"  Keyboard="Telephone"/>
+
+            <Label Text="Ciudad"  FontSize="18" TextColor="#808080"/>
+            <Entry x:Name="ciudadEntry" />
+
+            <Label Text="Contraseña" FontSize="18" TextColor="#808080"/>
+            <Entry x:Name="passEntry" IsPassword="True" />
+
+            <Button x:Name="editarButton" Text="Confirmar valores" BackgroundColor="#62B1F6" TextColor="White" HorizontalOptions="FillAndExpand" Margin="0,0,0,10" Clicked="editarButton_Clicked"/>
+
+            <Label x:Name="errormsg" Text="Las contraseñas no coinciden" TextColor="Red" FontSize="12" Margin="0,-10,0,10" IsVisible="False" />
+
+            <Label Text="Publicaciones" FontSize="20" TextColor="Black" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Margin="0,20,0,10" />
+
+            <Button x:Name="nuevapubliButton" Text="Crear nueva publicación" BackgroundColor="#84D69B" TextColor="White" HorizontalOptions="FillAndExpand" Margin="0,0,0,10" Clicked="nuevapubliButton_Clicked"/>
+            <Button x:Name="verpubliButton" Text="Ver Mis Publicaciones" BackgroundColor="#84D69B" TextColor="White" HorizontalOptions="FillAndExpand" Margin="0,0,0,10" Clicked="verpubliButton_Clicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

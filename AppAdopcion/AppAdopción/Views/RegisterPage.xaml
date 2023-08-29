@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppAdopción.Views.RegisterPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#62B1F6" Offset="0" />
+                    <GradientStop Color="#84D69B" Offset="1" />
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <StackLayout VerticalOptions="Center" Padding="40">
+                <Label Text="Registro de Usuario" FontSize="24" TextColor="White" HorizontalTextAlignment="Center" Margin="0,0,0,20" />
+
+                <Entry x:Name="usuarioEntry" Placeholder="Nombre de usuario" PlaceholderColor="White" BackgroundColor="Transparent" TextColor="White" Margin="0,0,0,10" />
+                
+
+                <Entry x:Name="emailEntry" Placeholder="Email" Keyboard="Email" PlaceholderColor="White" BackgroundColor="Transparent" TextColor="White" Margin="0,0,0,10" />
+               
+
+                <Entry x:Name="passEntry" Placeholder="Contraseña" PlaceholderColor="White" BackgroundColor="Transparent" TextColor="White" IsPassword="True" Margin="0,0,0,10" />
+                
+
+                <Entry x:Name="repPassEntry" Placeholder="Repetir contraseña" PlaceholderColor="White" BackgroundColor="Transparent" TextColor="White" IsPassword="True" Margin="0,0,0,10" />
+                
+
+                <Entry x:Name="movilEntry" Placeholder="Teléfono" Keyboard="Telephone" PlaceholderColor="White" BackgroundColor="Transparent" TextColor="White" Margin="0,0,0,10" />
+
+                <Entry x:Name="ciudadEntry" Placeholder="Ciudad" PlaceholderColor="White" BackgroundColor="Transparent" TextColor="White" Margin="0,0,0,10" />
+
+
+                <Label Text="¿Eres una protectora?" FontSize="16" TextColor="White" Margin="0,10,0,0" />
+                <Switch x:Name="protectoraSwitch" ThumbColor="#FFA500" HorizontalOptions="Center" Margin="0,0,0,20" />
+
+                <Button x:Name="registButton" Text="Registrarse" BackgroundColor="#FFA500" CornerRadius="10" FontAttributes="Bold" TextColor="White" WidthRequest="220" HorizontalOptions="Center"  Margin="0,0,0,10" Clicked="registButton_Clicked" />
+                <Label x:Name="errormsg" Text="" TextColor="Red" FontSize="12" Margin="0,-10,0,10"  />
+                
+                <Label Text="¿Ya tienes una cuenta?" FontSize="16" TextColor="White" HorizontalTextAlignment="Center" Margin="0,20,0,0" />
+                <Button x:Name="gotologinButton" Text="Iniciar sesión" BackgroundColor="Transparent" TextColor="LightSlateGray" FontAttributes="Bold" HorizontalOptions="Center" Clicked="gotologinButton_Clicked"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
